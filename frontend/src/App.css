@@ -12,12 +12,12 @@
   width: 100%;
 }
 
-/* Remove the old button styles since they're now handled by individual components */
+
 button {
   cursor: pointer;
 }
 
-/* Add some global styles */
+
 * {
   margin: 0;
   padding: 0;
