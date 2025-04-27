@@ -18,6 +18,9 @@ public class LearningPlanController {
     @Autowired
     private LearningPlanService planService;
 
+
+
+    // Endpoint to get all learning plans
     @GetMapping
     public List<LearningPlanDTO> getAllPlans() {
         List<LearningPlan> plans = planService.getAllPlans();
