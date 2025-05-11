@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
-import './ProgressForm.css';
 import { toast } from 'react-hot-toast';
 import { deleteProgressUpdate } from '../services/api';
 
@@ -55,12 +54,7 @@ const ProgressForm = () => {
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+
 
   const handleDelete = async (progressId) => {
     try {
