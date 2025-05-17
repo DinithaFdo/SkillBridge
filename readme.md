@@ -75,7 +75,7 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/skillbridge.git
+git clone https://github.com/DinithaFdo/skillbridge.git
 
 
 # Configure DB and Google Auth in application.properties
