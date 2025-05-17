@@ -52,7 +52,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
 
-    // Endpoint to create a new learning plan
+    // Endpoint to edit a learning plan with the ID
     @PutMapping("/{id}")
     public ResponseEntity<LearningPlanDTO> updatePlan(@PathVariable Long id, @RequestBody LearningPlanDTO planDTO) {
         LearningPlan updatedPlan = planService.updatePlan(id, planDTO);
@@ -67,6 +67,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
+    // Endpoint to delete a learning plan from ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePlan(@PathVariable Long id) {
         planService.deletePlan(id);
