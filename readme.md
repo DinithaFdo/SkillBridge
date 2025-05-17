@@ -111,6 +111,7 @@ npm start
 | GET    | /api/notifications          | Fetch notifications      |
 | GET    | /api/auth/google            | Google OAuth login       |
 
+
 🔐 Authentication
 
 - Google OAuth 2.0 integrated via Spring Security
