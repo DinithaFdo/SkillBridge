@@ -52,7 +52,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
 
-    
+    // Endpoint to create a new learning plan
     @PutMapping("/{id}")
     public ResponseEntity<LearningPlanDTO> updatePlan(@PathVariable Long id, @RequestBody LearningPlanDTO planDTO) {
         LearningPlan updatedPlan = planService.updatePlan(id, planDTO);
