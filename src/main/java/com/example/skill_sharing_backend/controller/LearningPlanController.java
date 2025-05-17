@@ -37,6 +37,7 @@ public class LearningPlanController {
         }).collect(Collectors.toList());
     }
 
+    // Endpoint to create a new learning plan
     @PostMapping
     public ResponseEntity<LearningPlanDTO> createPlan(@RequestBody LearningPlanDTO planDTO, @RequestParam Long userId) {
         LearningPlan plan = planService.createPlan(planDTO, userId);
@@ -51,6 +52,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
 
+    
     @PutMapping("/{id}")
     public ResponseEntity<LearningPlanDTO> updatePlan(@PathVariable Long id, @RequestBody LearningPlanDTO planDTO) {
         LearningPlan updatedPlan = planService.updatePlan(id, planDTO);
