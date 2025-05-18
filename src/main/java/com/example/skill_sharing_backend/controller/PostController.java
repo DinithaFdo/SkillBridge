@@ -50,7 +50,7 @@ public class PostController {
                     dto.put("createdAt", post.getCreatedAt());
                     dto.put("likeCount", post.getLikeCount());
                     dto.put("favoriteCount", post.getFavoriteCount());
-                    dto.put("shareCount", post.getShareCount());
+                    
                     
                     // Handle images and video safely
                     try {
