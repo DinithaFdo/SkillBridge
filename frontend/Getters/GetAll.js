@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
+import './ProgressForm.css';
 import { toast } from 'react-hot-toast';
 import { deleteProgressUpdate } from '../services/api';
 
@@ -16,7 +17,10 @@ const ProgressForm = () => {
   const [loading, setLoading] = useState(false);
   const [progressUpdates, setProgressUpdates] = useState([]);
 
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
 
     if (!user) {
       setError('You must be logged in to create a progress update');
@@ -51,7 +55,12 @@ const ProgressForm = () => {
     }
   };
 
-
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleDelete = async (progressId) => {
     try {
