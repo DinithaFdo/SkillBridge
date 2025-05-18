@@ -18,6 +18,9 @@ public class LearningPlanController {
     @Autowired
     private LearningPlanService planService;
 
+
+
+    // Endpoint to get all learning plans
     @GetMapping
     public List<LearningPlanDTO> getAllPlans() {
         List<LearningPlan> plans = planService.getAllPlans();
@@ -34,6 +37,7 @@ public class LearningPlanController {
         }).collect(Collectors.toList());
     }
 
+    // Endpoint to create a new learning plan
     @PostMapping
     public ResponseEntity<LearningPlanDTO> createPlan(@RequestBody LearningPlanDTO planDTO, @RequestParam Long userId) {
         LearningPlan plan = planService.createPlan(planDTO, userId);
@@ -48,6 +52,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
 
+    // Endpoint to edit a learning plan with the ID
     @PutMapping("/{id}")
     public ResponseEntity<LearningPlanDTO> updatePlan(@PathVariable Long id, @RequestBody LearningPlanDTO planDTO) {
         LearningPlan updatedPlan = planService.updatePlan(id, planDTO);
@@ -62,6 +67,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
+    // Endpoint to delete a learning plan from ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePlan(@PathVariable Long id) {
         planService.deletePlan(id);
